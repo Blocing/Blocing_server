@@ -24,23 +24,23 @@ const createDID = () => {
 };
 
 const getExpireDate = (today) => {
-  let year = today.getFullYear(); // хНаьОИя┐╜ыНМьШЩчМ╖я┐╜
-  let month = today.getMonth() + 1; // хНаьОМыЬЮ
-  let date = today.getDate(); // хНаьОДэЕКчнМьЪСьШЩ
-  let hour = today.getHours(); // хНаьОМыТДхНаьОМы╡м
+  let year = today.getFullYear(); // ?На?ОИя┐╜ыНМ?ШЩ?М╖я┐?
+  let month = today.getMonth() + 1; // ?На?ОМ?ЬЮ
+  let date = today.getDate(); // ?На?ОД?ЕКчнМьЪС?ШЩ
+  let hour = today.getHours(); // ?На?ОМ?ТД?На?ОМы╡?
   let minute = today.getMinutes();
   let second = today.getSeconds();
-  // const thisFirstSemester = year+'хНаьОИя┐╜я┐╜3хНаьОМыЬЮ1хНаьОМы╡м23хНаьОИы╗╗59я┐╜ъ▓лхНая┐╜59я┐╜ыгпхНая┐╜';
+  // const thisFirstSemester = year+'?На?ОИя┐╜я┐╜3?На?ОМ?ЬЮ1?На?ОМы╡?23?На?ОИы╗?59я┐╜ъ▓л?Ная┐?59я┐╜ыгп?Ная┐?';
   const thisFirstSemester = moment(
     year + "-03-01 23:59:59",
     "YYYY-MM-DD HH:mm:ss"
   ).format("YYYY-MM-DD HH:mm:ss");
-  // const thisSecondSemester = year+'хНаьОИя┐╜я┐╜9хНаьОМыЬЮ1хНаьОМы╡м23хНаьОИы╗╗59я┐╜ъ▓лхНая┐╜59я┐╜ыгпхНая┐╜';
+  // const thisSecondSemester = year+'?На?ОИя┐╜я┐╜9?На?ОМ?ЬЮ1?На?ОМы╡?23?На?ОИы╗?59я┐╜ъ▓л?Ная┐?59я┐╜ыгп?Ная┐?';
   const thisSecondSemester = moment(
     year + "-09-01 23:59:59",
     "YYYY-MM-DD HH:mm:ss"
   ).format("YYYY-MM-DD HH:mm:ss");
-  // const nextFirstSemester = (year+1)+'хНаьОИя┐╜я┐╜9хНаьОМыЬЮ1хНаьОМы╡м23хНаьОИы╗╗59я┐╜ъ▓лхНая┐╜59я┐╜ыгпхНая┐╜';
+  // const nextFirstSemester = (year+1)+'?На?ОИя┐╜я┐╜9?На?ОМ?ЬЮ1?На?ОМы╡?23?На?ОИы╗?59я┐╜ъ▓л?Ная┐?59я┐╜ыгп?Ная┐?';
   const nextFirstSemester = moment(
     1 + year + "-09-01 23:59:59",
     "YYYY-MM-DD HH:mm:ss"
@@ -102,7 +102,7 @@ const userService = {
       const [[rows]] = await conn.query(
         "SELECT * FROM Holder order by id DESC limit 1"
       );
-      return rows.id; // хНаьОИь╛╗хЪетЙкы╣ЬщЗЙя┐╜ хНаьОИыж░хНаьОДым╕ хНаьОМьаЯчЩ░ъ╖гыШ╗я┐╜ы▓е я┐╜я┐╜тСеьеЩя┐╜я┐╜я┐╜ number
+      return rows.id; // ?На?ОИь╛╗хЪе?Йкы╣ЬщЗЙя┐? ?На?ОИыж░хНа?ОДым? ?На?ОМ?аЯ?Щ░ъ╖гыШ╗я┐╜ы▓е я┐╜я┐╜?СеьеЩя┐╜я┐╜я┐╜ number
     } catch (e) {
       console.error(e);
     } finally {
@@ -110,7 +110,7 @@ const userService = {
     }
   },
   saveStudentIdCard: async (holderId) => {
-    //я┐╜ыЗбщБ║ьЦаьипчнМя╜ЛыШ╗я┐╜ы╡ехНаьОИэУа хНаьОИыж░хНаьОДым╕ хНаьОМьаЯчЩ░ъ╖гыШ╗хНаьПЩьШЩхНаьОМьВвхНаьОИыжнчЦлыАРьШЩ
+    //я┐╜ыЗб?Б║?Цаьи?чнМя╜Л?Ш╗я┐╜ы╡е?На?ОИ?Уа ?На?ОИыж░хНа?ОДым? ?На?ОМ?аЯ?Щ░ъ╖гыШ╗?На?ПЩ?ШЩ?На?ОМ?Вв?На?ОИыж??Цл??РьШЩ
     let today = new Date();
     let conn;
     const newStudentCard = {
@@ -135,7 +135,7 @@ const userService = {
           newStudentCard.status,
         ]
       );
-      //я┐╜ыЗбщБ║ьЦаьипчнМя╜ЛыШ╗я┐╜ы╡ехНаьОИэУа хНаьПЩьШЩхНаьПЩьШЩя┐╜ьВвхНаьОИыжнчЦлыАРьШЩ
+      //я┐╜ыЗб?Б║?Цаьи?чнМя╜Л?Ш╗я┐╜ы╡е?На?ОИ?Уа ?На?ПЩ?ШЩ?На?ПЩ?ШЩя┐╜ьВв?На?ОИыж??Цл??РьШЩ
       // Card{Card_did: args[0], Holder_id: args[1], Issuer_id: args[2], Update_date: args[3]}
       const [[rows]] = await conn.query(
         "SELECT card_did, holder_id, issuer_id FROM StudentIdCard order by id DESC limit 1"
@@ -149,10 +149,10 @@ const userService = {
       ];
       console.log(args);
       console.log(
-        "===========я┐╜ыЗбщБ║ьЦаьипчнМя╜ЛыШ╗я┐╜ы╡е хНаьОМыЬЪхНаьОМьВвхНаьОИэУа хНаьОИыж░хНаьОДым╕чнМьХ╛ьШЩ хНаьПЩьШЩхНаьПЩьШЩя┐╜ьВв (setCard)==========="
+        "===========я┐╜ыЗб?Б║?Цаьи?чнМя╜Л?Ш╗я┐╜ы╡е ?На?ОМ?ЬЪ?На?ОМ?Вв?На?ОИ?Уа ?На?ОИыж░хНа?ОДым╕чнМ?Х╛?ШЩ ?На?ПЩ?ШЩ?На?ПЩ?ШЩя┐╜ьВв (setCard)==========="
       );
       const result = await send(1, "setCard", args);
-      console.log(`${result}хНаьОМы┐пхНаьОИы╣НхНаьОИы╝Д`);
+      console.log(`${result}?На?ОМы┐??На?ОИы╣НхНа?ОИы╝?`);
       return rows.holder_id;
     } catch (e) {
       console.error(e);
@@ -169,30 +169,30 @@ module.exports = {
 
 
 
-
+// └╠╕▐└╧ └╬┴ї╝н║ё╜║
 // createEmail: async ({ email }) => {
-  //   console.log("Service createEmail хЪетЙкыоЗх╜Ыя┐╜");
+  //   console.log("Service createEmail ?Ъе?ЙкыоЗх╜Ыя┐?");
   //   const authCode = getAuthCode(6);
   //   let msg = "";
   //   msg += "<div style='margin:100px;'>";
-  //   msg += "<h1> хНаьОИэИзхНаьОИя┐╜ьЪСьШЩщЗЙя┐╜хНаьОДьЙнхНаьОМыТД хНаьОИыЦДчнМя╜МыоЙхаЙя┐╜хНаьПЩьШЩхНаьПЩьШЩщЗЙъ▓╜ыдГчЩТя┐╜я┐╜ы┐пхНаьОИы╣НхНаьОИы╝Д :) </h1> <br>";
+  //   msg += "<h1> ?На?ОИ?Из?На?ОИя┐╜ьЪС?ШЩ?ЗЙя┐╜хНа?ОД?Йн?На?ОМ?ТД ?На?ОИ?ЦДчнМя╜МыоЙхаЙя┐╜хНа?ПЩ?ШЩ?На?ПЩ?ШЩ?ЗЙъ▓╜ыдГ?ЩТя┐╜я┐╜ы┐??На?ОИы╣НхНа?ОИы╝? :) </h1> <br>";
   //   msg +=
-  //     "<p>хНаьОМыП│хНаьОМыЬЪцП╢ьПЙьШЩхНаьОМы┐пхНаьОМы▒╜ хНаьОМызДхНаьОИыжнхНаьОИьЧ░ хНаьОИэИбхНаьОМьВЛхНаьОМы▓е хНаьОМы╡ечнМьХ╛ьШЩ чФХъ│ХыЬЗя┐╜ъ╣Ия┐╜ык┤хНая┐╜ хНаьОМыДЗхНаьОМы╡ехНаьОИыжнхНаьОИы╗┐ хНаьОМыЬО, хНаьОМыП│хНаьОМыЬЪцП╢ьПЙьШЩхНаьОМы┐п чнМтЙкыЯйшВЙя┐╜ хНаьОМы┐пхНаьОМьа╛хНаьОИыжнхНаьОИьЧ░ щЫЕыЪпыИШя┐╜ы╗╗чЦлъ┐╕эАбшАМя┐╜хНаьОМы┐╗хНаьОИы╣НхНаьОИы╝Д.<p> <br>";
+  //     "<p>?На?ОМ?П│?На?ОМ?ЬЪ?П╢?ПЙ?ШЩ?На?ОМы┐??На?ОМы▒? ?На?ОМызДхНа?ОИыж??На?ОИ?Ч░ ?На?ОИ?Иб?На?ОМ?ВЛ?На?ОМы▓? ?На?ОМы╡ечнМ?Х╛?ШЩ ?ФХъ│ХыЬЗя┐╜ъ╣Ия┐╜ык┤?Ная┐? ?На?ОМ?ДЗ?На?ОМы╡ехНа?ОИыж??На?ОИы╗? ?На?ОМ?ЬО, ?На?ОМ?П│?На?ОМ?ЬЪ?П╢?ПЙ?ШЩ?На?ОМы┐? чнМтЙк?Яй?ВЙя┐? ?На?ОМы┐??На?ОМ?а╛?На?ОИыж??На?ОИ?Ч░ ?ЫЕ?Ъп?ИШя┐╜ы╗╗?Цлъ┐╕э?бш?Мя┐╜?На?ОМы┐╗хНа?ОИы╣НхНа?ОИы╝?.<p> <br>";
   //   msg += "<div align='center' style='border:1px solid black;>";
-  //   msg += "<h3 style='color:blue;'>хНаьОМы╡ечнМьХ╛ьШЩ чФХъ│ХыЬЗя┐╜ъ╣ИхНаьОМы┐пхНаьОИы╣НхНаьОИы╝Д.</h3>";
+  //   msg += "<h3 style='color:blue;'>?На?ОМы╡ечнМ?Х╛?ШЩ ?ФХъ│ХыЬЗя┐╜ъ╣И?На?ОМы┐??На?ОИы╣НхНа?ОИы╝?.</h3>";
   //   msg += "<div style='font-size:130%'>";
   //   msg += "<strong>" + authCode + "</strong><div><br/> </div>";
 
   //   const mail = {
   //     toAddress: email,
-  //     title: "[хНаьОИыЦДчнМя╜МыоЙхаЙя┐╜хНаьПЩьШЩхНаьПЩьШЩщЗЙъ▓╜ыдГхНая┐╜] хНаьОМыП│хНаьОМыЬЪ цП╢ьПЙьШЩхНаьОМы┐п хНаьОМы╡ечнМьХ╛ьШЩ чнМыблыЧДя┐╜ы╡м хНаьОИэИзхНаьОДыХА",
+  //     title: "[?На?ОИ?ЦДчнМя╜МыоЙхаЙя┐╜хНа?ПЩ?ШЩ?На?ПЩ?ШЩ?ЗЙъ▓╜ыдГ?Ная┐?] ?На?ОМ?П│?На?ОМ?ЬЪ ?П╢?ПЙ?ШЩ?На?ОМы┐? ?На?ОМы╡ечнМ?Х╛?ШЩ чнМыбл?ЧДя┐╜ы╡м ?На?ОИ?Из?На?ОД???",
   //     contents: msg,
   //     authCode,
   //   };
   //   return mail;
   // },
   // authEmail: async (email) => {
-  //   console.log("Service authEmail хЪетЙкыоЗх╜Ыя┐╜");
+  //   console.log("Service authEmail ?Ъе?ЙкыоЗх╜Ыя┐?");
   //   let transporter = nodemailer.createTransport({
   //     service: "Gmail",
   //     auth: {
@@ -208,7 +208,7 @@ module.exports = {
   //   };
   //   transporter.sendMail(mailOptions, (error, info) => {
   //     if (error) console.log(error);
-  //     else console.log(info.response + "хНаьОДьЙРя┐╜я┐╜тСиьШЩ");
+  //     else console.log(info.response + "?На?ОД?ЙРя┐╜я┐╜?Си?ШЩ");
   //   });
   //   return email.authCode;
   // },
